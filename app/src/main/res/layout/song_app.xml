@@ -56,6 +56,30 @@
         android:layout_height="wrap_content"
         android:weightSum="1"
         android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp" >
+
+        <TextView
+            android:layout_width="69dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/editor"
+            android:id="@+id/textView4"
+            android:layout_gravity="top" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:ems="10"
+            android:id="@+id/editText_editor" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp">
 
         <TextView

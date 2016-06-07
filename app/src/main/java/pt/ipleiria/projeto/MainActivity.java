@@ -202,6 +202,14 @@ public class MainActivity extends AppCompatActivity {
                         sreach_music.add(c);
                     }
                 }
+            } else if (Item.equals("EDITORA")){
+                for(String c : musicas){
+                    String[] s = c.split("\\★");
+                    String year = s[3];
+                    if (year.contains(term)){
+                        sreach_music.add(c);
+                    }
+                }
             }else if (Item.equals("RATING")) {
                 for (String c : musicas) {
                     String[] s = c.split("\\★");
@@ -239,17 +247,19 @@ public class MainActivity extends AppCompatActivity {
                 EditText etArtist = (EditText) al.findViewById(R.id.editText_artist);
                 EditText etAlbum = (EditText) al.findViewById(R.id.editText_album);
                 EditText etYear = (EditText) al.findViewById(R.id.editText_year);
+                EditText etEditor = (EditText) al.findViewById(R.id.editText_editor);
                 RatingBar star = (RatingBar) al.findViewById(R.id.ratingBar);
 
                 String artist = etArtist.getText().toString();
                 String album = etAlbum.getText().toString();
                 String year = etYear.getText().toString();
+                String editor = etEditor.getText().toString();
 
                 int starRating = (int)star.getRating();
 
-                String newMusic = album + " ★ " + artist + " ★ " + year + " ★ " + starRating + "stars";
+                String newMusic = album + " ★ " + artist + " ★ " + year + " ★ "+ editor +" ★ "+ starRating + "stars";
 
-                if (!artist.isEmpty() || !album.isEmpty() || !year.isEmpty()) {
+                if (!artist.isEmpty() || !album.isEmpty() || !year.isEmpty() || !editor.isEmpty()) {
                     musicas.add(newMusic);
                     Toast.makeText(MainActivity.this, R.string.Criar, Toast.LENGTH_SHORT).show();
                 } else {
