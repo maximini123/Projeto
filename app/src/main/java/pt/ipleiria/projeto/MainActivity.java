@@ -203,11 +203,11 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             } else if (Item.equals("EDITORA")){
-                for(String c2 : musicas){
-                    String[] s = c2.split("\\★");
+                for(String c : musicas){
+                    String[] s = c.split("\\★");
                     String year = s[3];
                     if (year.contains(term)){
-                        sreach_music.add(c2);
+                        sreach_music.add(c);
                     }
                 }
             }else if (Item.equals("RATING")) {
