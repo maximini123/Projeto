@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         Set<String> musicaset = sp.getStringSet("musicasKey", new HashSet<String>());
 
 
-        musicas = new ArrayList<String>();
+        musicas = new ArrayList<String>(musicaset);
         musicas.add("Não Dá ★ D.A.M.A ★ 2015 ★ 3stars");
         musicas.add("Homen do Leme ★ Xutos e Pontapés ★ 1993 ★ 3stars");
         musicas.add("Carry On ★ Avenged Sevenfold ★ 2012 ★ 5stars");
@@ -203,11 +203,11 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             } else if (Item.equals("EDITORA")){
-                for(String c : musicas){
-                    String[] s = c.split("\\★");
+                for(String cc : musicas){
+                    String[] s = cc.split("\\★");
                     String year = s[3];
                     if (year.contains(term)){
-                        sreach_music.add(c);
+                        sreach_music.add(cc);
                     }
                 }
             }else if (Item.equals("RATING")) {
